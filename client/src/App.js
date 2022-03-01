@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import { BrowserRouter as Switch, Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navbar';
 import Product from './pages/store';
 import Shopkeeper from './components/Shopkeeper';
@@ -17,8 +17,8 @@ export default function App() {
 		keepTheme();
 	})
 	return (
-		<Switch>
-			<Router>
+		<Router>
+			<Routes>
 				<div className='impDiv'>
 					{/* <Header /> */}
 					<Navigation />
@@ -47,8 +47,8 @@ export default function App() {
 						<SingleProduct />
 					</Route>
 					<Footer />
-				</div>
-			</Router>
-		</Switch>
+			</div>
+			</Routes>
+		</Router>
 	);
 }

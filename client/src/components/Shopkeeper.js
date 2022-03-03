@@ -1,5 +1,5 @@
 import React from 'react';
-import Faker from 'faker';
+import Faker from '@faker-js/faker';
 import { Button } from 'react-bootstrap';
 
 const traitList = [

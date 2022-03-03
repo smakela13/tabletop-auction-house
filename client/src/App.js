@@ -6,7 +6,7 @@ import {
 	createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navbar';
 import Product from './pages/store';
 import Shopkeeper from './components/Shopkeeper';
@@ -47,37 +47,23 @@ export default function App() {
 	})
 	return (
 		<ApolloProvider client={client}>
-			<Router>
-				<div className='impDiv'>
-					{/* <Header /> */}
-					<Navigation />
-					<Route exact path='/profile'>
-						<Profile />
-					</Route>
-					<Route exact path='/'>
-						<Product />
-					</Route>
-					<Route exact path='/addItem'>
-						<AddItem />
-					</Route>
-					<Route exact path='/shopkeeper'>
-						<Shopkeeper />
-					</Route>
-					<Route exact path='/contact'>
-						<Contact />
-					</Route>
-					<Route exact path='/login'>
-						<Login />
-					</Route>
-					<Route exact path='/signup'>
-						<Signup />
-					</Route>
-					<Route exact path='/:productId'>
-						<SingleProduct />
-					</Route>
-					<Footer />
-				</div>
-			</Router>
+			<div className='impDiv'>
+				<Navigation />
+				<Router>
+					<Routes>
+						{/* <Header /> */}
+						<Route path='/profile' element={<Profile />} />
+						<Route exact path='/' element={<Product />} />
+						<Route path='/addItem' element={<AddItem />} />
+						<Route path='/shopkeeper' element={<Shopkeeper />} />
+						<Route path='/contact' element={<Contact />} />
+						<Route path='/login' element={<Login />} />
+						<Route path='/signup' element={<Signup />} />
+						<Route path='/:productId' element={<SingleProduct />} />
+					</Routes>
+				</Router>
+				<Footer />
+			</div>
 		</ApolloProvider>
 	);
 }

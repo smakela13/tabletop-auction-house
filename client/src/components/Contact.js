@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import emailjs from 'emailjs-com';
 require('dotenv').config();
 
-const userID = `${window.env.USER_ID}`;
+const userID = `${process.env.USER_ID}`;
 
 const Contact = () => {
 	const [statusMessage, setStatusMessage] = useState();

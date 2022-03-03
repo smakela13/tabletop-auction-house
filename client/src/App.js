@@ -6,7 +6,7 @@ import {
 	createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Navigation from './components/Navbar';
 import Product from './pages/store';
 import Shopkeeper from './components/Shopkeeper';
@@ -47,8 +47,7 @@ export default function App() {
 	})
 	return (
 		<ApolloProvider client={client}>
-		<Router>
-			<Routes>
+			<Router>
 				<div className='impDiv'>
 					{/* <Header /> */}
 					<Navigation />
@@ -78,8 +77,7 @@ export default function App() {
 					</Route>
 					<Footer />
 				</div>
-			</Routes>
-		</Router>
+			</Router>
 		</ApolloProvider>
 	);
 }

@@ -79,7 +79,7 @@ const Shopkeeper = () => {
 
 	return (
 		<>
-			<div class='copyCatCard' style={{color: '#E8E8E8', alignSelf: 'center', backgroundColor: '#145374', padding: '5px', boxShadow: '0 5px 5px black'}}>
+			<div className='copyCatCard' style={{color: '#E8E8E8', alignSelf: 'center', backgroundColor: '#145374', padding: '5px', boxShadow: '0 5px 5px black'}}>
 				<h3 style={{marginBottom: '10px'}}>Generate a Random Shopkeeper</h3>
 				<p>{`First Name: ${character.firstName}`}</p>
 				<p>{`Last Name: ${character.lastName}`}</p>
